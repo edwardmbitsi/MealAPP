@@ -34,18 +34,12 @@
     <title>Meals App</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark">
+    <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <h2 id="title" class="navbar-brand">
           <i class="fas fa-pizza-slice"></i> &nbsp;Meal App
         </h2>
-        <a href="./favourite/favourite.html" id="favorite-meals-link"
-          >Favourite Meals</a
-        >
-      </div>
-    </nav>
-    <main class="d-flex flex-column justify-content-around align-items-center">
-      <div class="search-container">
+        <div class="search-container">
         <input
           type="text"
           id="search-meal-input"
@@ -60,6 +54,13 @@
           Search
         </button>
       </div>
+        <a href="../favourite/favourite.html" id="favorite-meals-link"
+          >Favourite Meals</a
+        >
+      </div>
+    </nav>
+    <main class="d-flex flex-column justify-content-around align-items-center">
+      
       <div
         id="meal"
         class="d-flex flex-wrap flex-row align-items-center justify-content-center"
@@ -77,12 +78,12 @@
           </div> -->
       </div>
       <!-- Meal Details Page -->
-      <div id="meal-details">
+      <div id="meal-details" style="background-color: #EF8354;">
         <!-- Go Back Button -->
-        <button class="btn btn-sm btn-outline-danger back-button">
+        <button class="btn btn-sm btn-outline back-button">
           <i class="fas fa-arrow-circle-left"></i> &nbsp; Go Back
         </button>
-        <div id="meal-details-container">
+        <div id="meal-details-container" style="background-color: #EF8354;">
           <!-- Structure of meal Details -->
           <!-- <h2 class = "recipe-title">Title of Meal</h2>
                 <div class = "recipe-instructions">

@@ -31,7 +31,7 @@ function searchForMeal() {
         // loop over every meal and add it to the list
         data.meals.forEach((meal) => {
           list += `
-              <div class = "meal-item d-flex flex-column align-items-center" id = "${meal.idMeal}">
+              <div class = "meal-item d-flex flex-column align-items-center" id = "${meal.idMeal}" >
                   <div class = "meal-img">
                       <img src = "${meal.strMealThumb}" alt = "food">
                   </div>
@@ -39,7 +39,7 @@ function searchForMeal() {
                       <h3>${meal.strMeal}</h3>
                       <a href = "#" class = "recipe-button">Get the Recipe</a>
                   </div>
-                  <button type="submit" class="btn btn-sm btn-outline-primary favourite-button"> Add To Favourites </button>
+                  <button type="submit" class="btn btn-sm btn-outline favourite-button"> Add To Favourites </button>
               </div>
           `;
         });
@@ -108,3 +108,22 @@ function addToFavourites(event) {
   favouriteMeals.push(mealId);
   localStorage.setItem("favourites", JSON.stringify(favouriteMeals));
 }
+
+const explosion = document.querySelector('.explosion');
+const favouriteButton = document.querySelector('.favourite-button');
+
+favouriteButton.addEventListener('click', (event) => {
+  const rect = event.target.getBoundingClientRect();
+  const buttonCenterX = rect.left + rect.width / 2;
+  const buttonCenterY = rect.top + rect.height / 2;
+
+  explosion.style.left = `${buttonCenterX - 15}px`;
+  explosion.style.top = `${buttonCenterY - 15}px`;
+  explosion.style.opacity = '1';
+  explosion.style.animationPlayState = 'running';
+});
+
+explosion.addEventListener('animationend', () => {
+  explosion.style.opacity = '0';
+  explosion.style.animationPlayState = 'paused';
+});
